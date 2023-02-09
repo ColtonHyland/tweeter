@@ -1,0 +1,99 @@
+.new-tweet {
+  display:flex;
+  flex-direction: column;
+  width: 90%;
+  background-color: bisque;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  font-family: sans-serif;
+}
+
+#new-tweet-form {
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+}
+
+#tweet-text {
+  background-color: bisque;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  border: hidden;
+  resize: none;
+  border-bottom: 3px solid black;
+  margin-bottom: 5px;
+  padding: 12px 12px;
+}
+
+.new-tweet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+  font-size: 24px;
+  margin-top: 5px; 
+}
+
+.submit-button {  
+  background-color: darkorange;
+  color: bisque;
+}
+
+.submit-button:hover {  
+  background-color: burlywood;
+  transform: scale(1.075, 1.075);
+}
+
+.text-over-limit {
+  color: red;
+  animation: shake 1.2s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.text-error{
+  display: flex;
+  border: 3px solid red;
+  color: rgb(182, 0, 0);
+  font-size: 28px;
+  padding: 10px;
+  margin-block: 10px;
+  background-color: bisque;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  animation: shake 1.2s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.fa-exclamation-triangle {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+ .new-tweet {
+   width: 100%;
+ } 
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(3px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-6px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(6px, 0, 0);
+  }
+}

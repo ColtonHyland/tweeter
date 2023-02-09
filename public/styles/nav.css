@@ -1,0 +1,57 @@
+nav {
+  height: 100px;
+  width: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+  background-color: darkorange;
+  color: bisque;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.tweeter-logo {
+  display: flex;
+  text-align: end;
+  flex-wrap: wrap;
+  font-size: 1.75rem;
+  font-family: 'Bungee', sans-serif;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.write-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-angle-double-down:hover {
+  transform: scale(1.2, 1.2);
+  color: red;
+}
+
+span.write-new-tweet {
+  font-size: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+@media only screen and (min-width: 1024px)  {
+  nav {
+    height: 120px;
+    border-bottom: 2px solid saddlebrown;
+  }
+
+  .tweeter-logo {
+    font-size: 3rem;
+  }
+
+  span.write-new-tweet {
+    font-size: 1.5rem;
+  }
+}

@@ -3,7 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -14,12 +14,42 @@ html {
  * Global layout stuff
  */
 
-body {
+ body {
   color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
+  background-color: bisque;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+main {
+  display: flex;
+  width: 100%;
+  background-color: bisque;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  flex-direction: column;
+  font-family: 'Source Sans Pro', sans-serif;
+  align-items: center;
+  padding-top: 20px;
+}
+
+ @media only screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  main {
+    width: 200%;
+    background-color: bisque;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    margin-top: 120px;
+    margin-right: 50px;
+    margin-left: 30px;
+  }
+}
