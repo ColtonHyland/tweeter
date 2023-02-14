@@ -7,15 +7,18 @@
 
 $(() => {
 
-
+  //renders existing tweets using ajax promise
   const loadTweets = function () {
     $.ajax("/tweets").then(function (tweets) {
       renderTweets(tweets);
     });
   };
+
+  //render tweets and hide our error response
   loadTweets();
   $(".error").hide();
 
+  //tweets are identified and placed into out tweet container
   const renderTweets = function (tweets) {
     $("#tweets-container").empty();
     for (const item of tweets) {
@@ -24,19 +27,21 @@ $(() => {
     }
   };
 
+  //leaves html writing and place, creates element node and a text node
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  //hides error response and loads tweets
   loadTweets();
   $(".text-error").hide();
 
-
+  //html script filled out with identifiers of the node data for tweet
   const createTweetElement = function(tweet) {
     let $tweet = $(`
-  <article class="tweet">
+      <article class="tweet">
         <header class="tweet-header">
           <div class="user-profile">
             <img class="avatar" src="${tweet.user.avatars}"></img> 
@@ -62,11 +67,12 @@ $(() => {
   };
 
   
-
+//submits a form depending on if something happens
   $("#new-tweet-form").submit(function(event) {
     event.preventDefault();
     const $textLength = $(this).find("#tweet-text").val().length;
   
+    //checks for an error and sends commands to summon and error message
     if (!$textLength) {
       $(".text-error").text("Your Tweet is too short!");
       $(".text-error").slideDown("slow");
@@ -75,7 +81,7 @@ $(() => {
       $(".text-error").text("Your Tweet is too long!");
       $(".text-error").slideDown("slow");
       $(".text-error").delay(2500).slideUp("slow");
-    } else {
+    } else { //ajax promise fetches tweets
       $.ajax("/tweets", {
         method: "POST",
         data: $(this).serialize(),
